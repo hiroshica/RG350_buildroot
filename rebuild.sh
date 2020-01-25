@@ -6,12 +6,12 @@ echo "Updating local git repository..."
 git pull
 
 # Use the default config and patch it to point to our install location.
-make gcw0_defconfig
+make rg350_defconfig BR2_EXTERNAL=board/opendingux
 sed -ie 's%^BR2_HOST_DIR=.*$%BR2_HOST_DIR="/opt/gcw0-toolchain"%' .config
 
 # Clear the install location.
 echo "Clearing install location..."
-rm -rf /opt/gcw0-toolchain/*
+rm -rf /opt/gcw0-toolchain/* /opt/rg350-toolchain
 
 # Clear the build location.
 echo "Clearing build location..."
@@ -35,7 +35,8 @@ rm -f dl/sdl2-*.tar.gz
 
 # Perform the build.
 echo "Starting build..."
-nice make BR2_EXTERNAL=board/opendingux
+make
+ln -s /opt/gcw0-toolchain /opt/rg350-toolchain
 
 # Create packages.
 echo "Creating packages..."
