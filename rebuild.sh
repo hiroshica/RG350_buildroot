@@ -2,11 +2,11 @@
 set -e
 
 # Get the latest version.
-echo "Updating local git repository..."
-git pull
+#echo "Updating local git repository..."
+#git pull
 
 # Use the default config and patch it to point to our install location.
-make rg350_defconfig BR2_EXTERNAL=board/opendingux
+make rg350_defconfig
 sed -ie 's%^BR2_HOST_DIR=.*$%BR2_HOST_DIR="/opt/gcw0-toolchain"%' .config
 
 # Clear the install location.
@@ -15,7 +15,8 @@ rm -rf /opt/gcw0-toolchain/* /opt/rg350-toolchain
 
 # Clear the build location.
 echo "Clearing build location..."
-rm -rf output/
+#rm -rf output/
+make clean
 
 # Remove non-versioned packages: they might have been updated since the last build.
 rm -f dl/bennugd-*.tar.gz
@@ -35,9 +36,12 @@ rm -f dl/sdl2-*.tar.gz
 
 # Perform the build.
 echo "Starting build..."
-make
+nice make BR2_EXTERNAL=board/opendingux $1
+
+#
+echo "gcw0->rg350 create link"
 ln -s /opt/gcw0-toolchain /opt/rg350-toolchain
 
 # Create packages.
-echo "Creating packages..."
-tar -C/opt --exclude='.fakeroot.*' -jcf opendingux-gcw0-toolchain.`date +'%Y-%m-%d'`.tar.bz2 gcw0-toolchain
+#echo "Creating packages..."
+#tar -C/opt --exclude='.fakeroot.*' -jcf opendingux-gcw0-toolchain.`date +'%Y-%m-%d'`.tar.bz2 gcw0-toolchain
