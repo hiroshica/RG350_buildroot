@@ -20,6 +20,12 @@ $ make
 # To generate upgrade image
 $ . board/opendingux/gcw0/make_upgrade.sh
 
+これだと作った場所でしか動作しないtool chainになるので
+build.sh
+で作る。そうすれば
+/opt
+配下に展開されたtoolchainとして動作する
+
 ======================================================
 
 
