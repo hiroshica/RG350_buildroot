@@ -4,14 +4,14 @@
 #
 ################################################################################
 
-SDL2_IMAGE_VERSION = 2.0.0
+SDL2_IMAGE_VERSION = 2.0.2
 SDL2_IMAGE_SOURCE = SDL2_image-$(SDL2_IMAGE_VERSION).tar.gz
 SDL2_IMAGE_SITE = http://www.libsdl.org/projects/SDL_image/release
 SDL2_IMAGE_INSTALL_STAGING = YES
 SDL2_IMAGE_LICENSE = zlib
 SDL2_IMAGE_LICENSE_FILES = COPYING.txt
 
-SDL2_IMAGE_CONF_OPT = --with-sdl-prefix=$(STAGING_DIR)/usr \
+SDL2_IMAGE_CONF_OPTS = --with-sdl-prefix=$(STAGING_DIR)/usr \
 		--with-sdl-exec-prefix=$(STAGING_DIR)/usr \
 		--disable-sdltest \
 		--disable-static \

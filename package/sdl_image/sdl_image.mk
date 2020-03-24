@@ -4,14 +4,14 @@
 #
 ################################################################################
 
-SDL_IMAGE_VERSION = 1.2.12
-SDL_IMAGE_SOURCE = SDL_image-$(SDL_IMAGE_VERSION).tar.gz
-SDL_IMAGE_SITE = http://www.libsdl.org/projects/SDL_image/release
+SDL_IMAGE_VERSION = a66b2dd7687b
+SDL_IMAGE_SOURCE = $(SDL_IMAGE_VERSION).tar.gz
+SDL_IMAGE_SITE = https://hg.libsdl.org/SDL_image/archive
 SDL_IMAGE_INSTALL_STAGING = YES
 SDL_IMAGE_LICENSE = zlib
 SDL_IMAGE_LICENSE_FILES = COPYING
 
-SDL_IMAGE_CONF_OPT = --with-sdl-prefix=$(STAGING_DIR)/usr \
+SDL_IMAGE_CONF_OPTS = --with-sdl-prefix=$(STAGING_DIR)/usr \
 		--with-sdl-exec-prefix=$(STAGING_DIR)/usr \
 		--disable-sdltest \
 		--disable-static \
@@ -35,7 +35,7 @@ SDL_IMAGE_DEPENDENCIES = sdl \
 	$(if $(BR2_PACKAGE_SDL_IMAGE_TIFF),tiff) \
 	$(if $(BR2_PACKAGE_SDL_IMAGE_WEBP),webp)
 
-HOST_SDL_IMAGE_CONF_OPT = --with-sdl-prefix=$(HOST_DIR)/usr \
+HOST_SDL_IMAGE_CONF_OPTS = --with-sdl-prefix=$(HOST_DIR)/usr \
                 --with-sdl-exec-prefix=$(HOST_DIR)/usr \
                 --disable-sdltest \
                 --disable-static \

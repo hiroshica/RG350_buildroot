@@ -4,14 +4,14 @@
 #
 ################################################################################
 
-ZLIB_VERSION = 1.2.8
+ZLIB_VERSION = 1.2.11
 ZLIB_SOURCE = zlib-$(ZLIB_VERSION).tar.xz
-ZLIB_SITE = http://downloads.sourceforge.net/project/libpng/zlib/$(ZLIB_VERSION)
-ZLIB_LICENSE = zlib license
+ZLIB_SITE = http://www.zlib.net
+ZLIB_LICENSE = Zlib
 ZLIB_LICENSE_FILES = README
 ZLIB_INSTALL_STAGING = YES
 
-ifeq ($(BR2_PREFER_STATIC_LIB),y)
+ifeq ($(BR2_STATIC_LIBS),y)
 ZLIB_PIC =
 ZLIB_SHARED = --static
 else
