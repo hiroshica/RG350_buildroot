@@ -2,11 +2,6 @@
 ============= RG350 BUILD INSTRUCTIONS ===============
 ======================================================
 
-!!!注意!!!
-最新を追跡してしまったせいでWSL/64bit ubuntuでビルドできなくなりました　いくつかさかのぼったコミットにしないと
-上記条件でビルドできません。
-
-
 ### Pre-Build Steps ###
 
 $ sudo apt-get update
@@ -19,7 +14,7 @@ $ sudo apt-get install bison flex gettext texinfo wget cpio python unzip mercuri
 
 ## Enter the directory where you want to clone the git repo
 ## This assumes that you have a clean buildroot/dl and buildroot/output directory 
-$ git clone https://github.com/jbd1986/RG350_buildroot.git
+$ git clone []
 $ cd RG350_buildroot
 $ make rg350_defconfig BR2_EXTERNAL=board/opendingux
 $ make
@@ -31,7 +26,7 @@ build.sh
 で作る。そうすれば
 /opt
 配下に展開されたtoolchainとして動作する
-(21/03/2020 追記　linux kernelビルドでエラーが出るがとりあえず使える分のtoolchainまではビルド出来た)
+
 
 ======================================================
 
