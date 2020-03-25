@@ -7,7 +7,7 @@
 $ sudo apt-get update
 $ sudo apt-get install bison flex gettext texinfo wget cpio python unzip mercurial subversion libncurses5-dev libc6-dev-i386 bzr squashfs-tools
 ## you need a javac compiler, (i.e. sudo apt-get install gcj-4.9-jdk)
-## ubuntu 16.04 or 19.10 add packages. (sudo apt install java-wrappers libssl-dev default-jdk ecj git make)
+## ubuntu 16.04 or 19.10 add packages. (sudo apt install java-wrappers libssl-dev default-jdk ecj git make zip)
 ## Build necessary ubuntu 16.04 or 19.10.
 
 ### Build Steps ###
