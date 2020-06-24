@@ -32,9 +32,9 @@ LVM2_CONF_OPTS += --disable-readline
 endif
 
 ifeq ($(BR2_PACKAGE_LVM2_STANDARD_INSTALL),)
-LVM2_MAKE_OPT = device-mapper
-LVM2_INSTALL_STAGING_OPT = DESTDIR=$(STAGING_DIR) install_device-mapper
-LVM2_INSTALL_TARGET_OPT = DESTDIR=$(TARGET_DIR) install_device-mapper
+LVM2_MAKE_OPTS = device-mapper
+LVM2_INSTALL_STAGING_OPTS = DESTDIR=$(STAGING_DIR) install_device-mapper
+LVM2_INSTALL_TARGET_OPTS = DESTDIR=$(TARGET_DIR) install_device-mapper
 endif
 
 ifeq ($(BR2_PACKAGE_LVM2_APP_LIBRARY),y)
